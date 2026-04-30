@@ -98,10 +98,26 @@ Reason:
     }
 
     except Exception as error:
-        return {
-            "decision": "Error",
-            "confidence": "Low",
-            "key_evidence": [str(error)],
-            "recommended_actions": ["Check token, model availability, or internet."],
-            "disclaimer": "This is not professional or legal advice."
-        }
+        # fallback rule-based detection
+
+        text = message.lower()
+
+        if "http" in text or "click" in text or "urgent" in text:
+            decision = "Likely Scam"
+            confidence = "Medium"
+            reason = "Detected suspicious keywords or links"
+        else:
+            decision = "Uncertain"
+            confidence = "Low"
+            reason = "Not enough indicators"
+
+    return {
+        "decision": decision,
+        "confidence": confidence,
+        "key_evidence": [reason],
+        "recommended_actions": [
+            "Avoid interacting with suspicious messages",
+            "Verify sender authenticity"
+        ],
+        "disclaimer": "Fallback response due to AI service issue."
+    }

@@ -1,0 +1,68 @@
+# ----------------------
+# Python
+# ----------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+
+# ----------------------
+# Virtual Environment
+# ----------------------
+venv/
+env/
+ENV/
+
+# ----------------------
+# Environment variables (IMPORTANT)
+# ----------------------
+.env
+
+# ----------------------
+# Jupyter Notebook
+# ----------------------
+.ipynb_checkpoints/
+
+# ----------------------
+# VS Code
+# ----------------------
+.vscode/
+
+# ----------------------
+# OS files
+# ----------------------
+.DS_Store
+Thumbs.db
+
+# ----------------------
+# Logs
+# ----------------------
+*.log
+
+# ----------------------
+# Build / Distribution
+# ----------------------
+build/
+dist/
+*.egg-info/
+
+# ----------------------
+# Secrets / Keys
+# ----------------------
+*.pem
+*.key
+secrets.json
+
+# ----------------------
+# Node (if you add frontend later)
+# ----------------------
+node_modules/
+
+# ----------------------
+# Coverage / Testing
+# ----------------------
+.coverage
+htmlcov/
+.pytest_cache/

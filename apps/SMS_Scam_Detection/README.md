@@ -1,46 +1,100 @@
-# 📱 SMS Scam Detection System
+# 📱 SMS Scam Detection System (AI-Powered)
 
-An AI-powered full-stack application that analyzes SMS messages and detects potential scams using Natural Language Processing.
-
----
-
-## 🚀 Project Overview
-
-This project is designed to simulate a real-world cybersecurity tool that helps users identify suspicious SMS messages. It uses a backend API and will integrate AI models to classify messages as:
-
-* Likely Scam
-* Likely Legitimate
-* Uncertain
+An end-to-end **AI-powered web application** that detects scam SMS messages using Large Language Models (LLMs).
+Built with a full-stack architecture and deployed for real-world usage.
 
 ---
 
-## 🧱 Project Structure
+## 🚀 Live Demo
+
+ **Frontend (Vercel):** https://your-vercel-url.vercel.app
+ **Backend (Render):** https://sms-scam-detection-app.onrender.com
+ **API Docs:** https://sms-scam-detection-app.onrender.com/docs
+
+---
+
+## 🧠 Project Overview
+
+This system analyzes SMS messages and classifies them into:
+
+* **Likely Scam**
+* **Likely Legitimate**
+* **Uncertain**
+
+It uses **prompt engineering + LLM inference** to detect:
+
+* Urgency or pressure language
+* Suspicious links
+* Requests for money / OTP / personal data
+* Impersonation of trusted organizations
+
+---
+
+## 🧱 Architecture
 
 ```
-SMS_Scam_Detection/
-├── backend/
-│   └── app/
-│       ├── routes/        # API endpoints
-│       └── services/      # Business logic & AI integration
-│
-├── frontend/              # React UI (to be implemented)
-├── docs/                  # Architecture & design documentation
-├── screenshots/           # UI images for README
-├── dataset/               # Sample SMS data for testing
+React Frontend (Vercel)
+        ↓
+FastAPI Backend (Render)
+        ↓
+Hugging Face LLM API
 ```
 
 ---
 
-## 🧠 Architecture
+## 🛠️ Tech Stack
 
-* **Backend:** FastAPI (Python)
-* **Frontend:** React.js (planned)
-* **AI Integration:** Hugging Face (planned)
+### Backend
 
+* FastAPI (Python)
+* Pydantic
+* Hugging Face Inference API
+* Python-dotenv
+
+### Frontend
+
+* React.js
+* Axios / Fetch API
+* Custom UI styling
+
+### Deployment
+
+* Render (Backend)
+* Vercel (Frontend)
 
 ---
 
-## ⚙️ Setup Instructions
+## ✨ Features
+
+*  AI-powered SMS scam detection
+*  Prompt-engineered structured outputs
+*  Confidence scoring
+*  Fallback logic for reliability
+*  Real-time API response
+*  Modern responsive UI
+*  Fully deployed full-stack system
+
+---
+
+## 🧪 Example
+
+### Input
+
+```
+Your bank account will be blocked. Click now http://fakebank.com
+```
+
+### Output
+
+```
+Decision: Likely Scam  
+Confidence: High  
+Reason: Contains urgency, suspicious link, and impersonation
+```
+
+---
+
+## ⚙️ Local Setup
 
 ### 1. Clone Repository
 
@@ -60,13 +114,13 @@ pip install -r requirements.txt
 
 ---
 
-### 3. Run Backend Server
+### 3. Run Backend
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Open in browser:
+Open:
 
 ```
 http://127.0.0.1:8000/docs
@@ -74,45 +128,62 @@ http://127.0.0.1:8000/docs
 
 ---
 
+### 4. Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+---
+
 ## 🔐 Environment Variables
 
-Create a `.env` file in the backend folder:
+Create `.env` in backend:
 
 ```
 HUGGINGFACE_API_KEY=your_api_key_here
+HF_MODEL=meta-llama/Llama-3.1-8B-Instruct
 ```
 
-⚠️ Do NOT push `.env` to GitHub.
+⚠️ Never commit `.env` to GitHub
 
 ---
 
-## 🧪 Current Status
+## 📌 Key Implementation Details
 
-* [x] Project structure created
-* [ ] FastAPI backend setup
-* [ ] API endpoint creation
-* [ ] AI integration
-* [ ] Frontend development
-* [ ] Deployment
-
----
-
-## 🎯 Learning Objectives
-
-* Build full-stack AI applications
-* Understand API design and backend architecture
-* Integrate AI models using Hugging Face
-* Deploy production-ready applications
+* Designed **structured prompts** for consistent AI output
+* Implemented **response parsing logic**
+* Added **fallback handling** for API failures
+* Managed **CORS configuration** for deployment
+* Built **REST API architecture using FastAPI**
 
 ---
 
-## 📌 Notes
+## 🎯 Learning Outcomes
 
-This project is being built step-by-step with a focus on understanding every component rather than copying code.
+* Full-stack AI application development
+* API design & backend architecture
+* LLM integration via Hugging Face
+* Deployment using modern platforms
+* Production-level debugging and error handling
 
 ---
 
 ## 👩‍💻 Author
 
-Javeria Samreen
+**Javeria Samreen**
+Melbourne, Australia
 
+---
+
+## ⭐ Future Improvements
+
+* Chat-style conversational UI
+* SMS dataset evaluation & accuracy metrics
+* User authentication
+* Logging & analytics dashboard
+* Multi-language scam detection
+
+---
